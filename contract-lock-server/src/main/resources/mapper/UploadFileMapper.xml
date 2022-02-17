@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.lvjguo.contractlockserver.mapper.UploadFileMapper">
+    <insert id="addFile" parameterType="java.util.Map">
+      insert into file (uuidName,oldName,url,`type`,`size`,`time`)
+    	values (#{uuidName}, #{oldName}, #{url}, #{type}, #{size}, #{time})
+  </insert>
+    <select id="findUrl" resultType="top.lvjguo.contractlockserver.entity.FileEntity">
+        select * from file where uuidName = #{uuid};
+    </select>
+</mapper>
